@@ -8,6 +8,7 @@
     1.1. `docker compose up -d` to initiate docker compose;
     1.1. `yarn prisma migrate dev` to initiate prisma migration;
     1.4. `docker logs morada_api -f` to check the api logs.
+    
 
  2. ENDPOINTS EXAMPLES:
     
@@ -26,11 +27,5 @@
     
         with the Req being:
         
-        ```
         Multipart-Form:
         imoveis  -  File
-        ```
-
-
-
-    
