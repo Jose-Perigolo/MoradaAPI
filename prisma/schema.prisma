@@ -1,0 +1,35 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Imovel {
+  id             Int       @id @default(autoincrement())
+  name           String    @unique
+  previsaoInicio DateTime?
+  previsaoFim    DateTime?
+  status         String
+  desconto       Boolean   @default(false)
+  itbi           Boolean   @default(false)
+  registro       Boolean   @default(false)
+  condominio     Float
+  tipoLogradouro String
+  logradouro     String
+  cep            String
+  numero         Int
+  bairro         String
+  cidade         String
+  qtdBanheiros   Int?
+  area           Int?
+  qtdQuartos     Int?
+  valor          Float
+
+  @@map("imoveis")
+}
